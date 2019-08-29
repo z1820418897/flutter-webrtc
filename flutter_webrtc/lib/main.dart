@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_webrtc_demo/page/index.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,8 +28,19 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(title: Text("webrtc应用手机客户端"),),
       body: Center(
-        child: Container(
-          child: Text("你好世界"),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            RaisedButton(
+              color: Theme.of(context).primaryColor,
+              child: Text("开始体验",style: TextStyle(
+                color: Colors.white
+              ),),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>IndexPage()),);
+              },
+            ),
+          ],
         ),
       ),
     );
